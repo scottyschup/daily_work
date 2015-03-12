@@ -1,0 +1,58 @@
+def get_email
+  puts 'Gimme yo email:'
+  gets.chomp
+end
+
+def get_action
+  puts "What you wanna do?"
+  puts '0. Create shortened URL'
+  puts '1. Visit shortened URL'
+  gets.chomp
+end
+
+def find_user(email)
+  User.find_by({email: email})
+end
+
+def create_shortened_url(user, long_url)
+  ShortenedUrl.create_for_user_and_long_url!(user, long_url)
+end
+
+def get_long_url
+  puts "Put yo long url here: "
+  gets.chomp
+end
+
+def get_short_url
+  puts "Put yo short url here: "
+  gets.chomp
+end
+
+def visit_short_url(user, short_url)
+  long_url = Visit.record_visit!(user, short_url).shortened_url.long_url
+
+  Launchy.open(long_url)
+end
+
+def run
+  email = get_email
+  user = find_user(email)
+  return puts "Invalid email" unless user
+
+  while true
+    case get_action
+    when '0'
+      long_url = get_long_url
+      short_url = create_shortened_url(user, long_url)
+      return puts "invalid!!!!" unless short_url.valid?
+      puts "Short URL is: #{short_url.short_url}"
+    when '1'
+      short_url = get_short_url
+      visit_short_url(user, short_url)
+    else
+      puts "you're doing it wrong!"
+    end
+  end
+end
+
+run

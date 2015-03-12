@@ -1,0 +1,12 @@
+
+
+SELECT
+  answer_choices.*, COUNT(responses.id) AS response_count
+FROM
+  answer_choices
+LEFT OUTER JOIN
+  responses ON answer_choices.id = responses.answer_choice_id
+WHERE
+  answer_choices.question_id = ? --? is question id from ruby
+GROUP BY
+  answer_choices.id
