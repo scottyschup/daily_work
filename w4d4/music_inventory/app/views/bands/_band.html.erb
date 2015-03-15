@@ -1,0 +1,6 @@
+<ul>
+  <li>Band: <%= band.name %></li>
+  <li><%= link_to "Albums:  #{band.albums.length}", 
+                  "/bands/#{band.id}/albums" %>
+  </li>
+</ul>

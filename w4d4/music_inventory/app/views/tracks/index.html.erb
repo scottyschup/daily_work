@@ -1,0 +1,6 @@
+<% album = Album.find(params[:album_id]) %>
+<% band = album.band %>
+
+<h1><%= album.name %></h1>
+<h2>by <%= link_to "#{band.name}", "/bands/#{band.id}/albums" %></h2>
+<%= render @tracks %>

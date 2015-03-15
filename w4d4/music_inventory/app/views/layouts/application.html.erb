@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'shared/errors' %>
 
-<%= yield %>
+  <% if current_user %>
+    <h3>Hello, <%= User.find(current_user[:id]).email %></h3>
+    <%= button_to 'Logout', session_url, method: :delete %>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

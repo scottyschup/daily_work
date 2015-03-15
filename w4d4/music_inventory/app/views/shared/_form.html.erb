@@ -1,0 +1,31 @@
+<% if url == :users %>
+  <% action, title = [users_url, 'Sign Up'] %>
+<% else %>
+  <% action, title = [session_url, 'Log In'] %>
+<% end %>
+
+<h1><%= title %>!</h1>
+<% if title == 'Sign Up' %>
+  <p>Already have an account? <%= link_to 'Log in', new_session_url %></p>
+<% else %>
+  <p>Don't have an account? <%= link_to 'Sign up', new_user_url %></p>
+<% end %>
+
+<form action='<%= action %>' method='post'>
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <label>Name:
+    <input type='text' name='user[email]' placeholder='Email address'>
+  </label>
+  <br>
+
+  <label>Password:
+    <input type='password' name='user[password]' placeholder='Password'>
+  </label>
+  <br>
+
+  <input type='submit' value='Submit info'>
+</form>

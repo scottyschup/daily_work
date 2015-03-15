@@ -1,0 +1,6 @@
+<ul>
+  <li>Album: <%= album.name %></li>
+  <li><%= link_to "Tracks:  #{album.tracks.length}",
+                  "/albums/#{album.id}/tracks" %>
+  </li>
+</ul>
