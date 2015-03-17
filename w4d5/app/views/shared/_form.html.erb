@@ -1,0 +1,11 @@
+<h1><%= title %></h1>
+<form action="<%= route %>" method="post">
+  <%= render 'shared/csrf_token' %>
+  <label>Username:
+    <input type="text" name="user[username]" value="<%= user.username %>">
+  </label><br/>
+  <label>Password:
+    <input type="password" name="user[password]">
+  </label><br>
+  <input type="submit" value="<%= title %>">
+</form>

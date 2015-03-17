@@ -1,0 +1,9 @@
+<h2><%= @sub.title %></h2>
+<p><%= @sub.description %></p>
+<%= render @posts %><br/>
+<%= link_to "Add Post", new_sub_post_url(@sub) %><br/>
+<% if current_user.id == @sub.moderator_id %>
+  <%= link_to "Edit Sub", edit_sub_url(@sub) %><br/>
+  <%= link_to "Delete Sub", sub_url(@sub), method: :delete %><br/>
+<% end %>
+<%= link_to "All Subs", root_url %>

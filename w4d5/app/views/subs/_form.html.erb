@@ -1,0 +1,17 @@
+<h1><%= title %></h1>
+
+<form action="<%= action %>" method="post">
+  <%= render 'shared/csrf_token' %>
+  <input type="hidden" name="_method" value="<%= method %>">
+  <label>Title:
+    <input type="text" name="sub[title]" value="<%= sub.title %>">
+  </label>
+  <br>
+
+  <label>Description (optional):
+    <textarea name="sub[description]"><%= sub.description %></textarea>
+  </label>
+  <br>
+
+  <input type='submit' value='<%= title %>'>
+</form>

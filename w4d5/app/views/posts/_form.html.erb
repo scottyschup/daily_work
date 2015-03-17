@@ -1,0 +1,26 @@
+<h1><%= title %></h1>
+<form action="<%= action %>" method="post">
+  <%= render 'shared/csrf_token' %>
+  <input type="hidden" name="_method" value="<%= method %>">
+  <label>Title:
+    <input type="text" name="post[title]" value="<%= post.title %>">
+  </label><br/>
+  <label>URL:
+    <input type="text" name="post[url]" value="<%= post.url %>">
+  </label><br/>
+  <label>Content:
+    <textarea type="text" name="post[content]"><%= post.content %></textarea>
+  </label><br/>
+  <p>Subs:</p>
+  <% subs.each do |sub| %>
+    <label><input
+      type="checkbox"
+      name="post[sub_ids][]"
+      value='<%= sub.id %>'
+      <%= "checked" if flash[:sub_ids].try(:include?, sub.id.to_s) %>>
+      <%= sub.title %>
+    </label>
+    <br>
+  <% end %>
+  <input type="submit" value="<%= title %>">
+</form>
