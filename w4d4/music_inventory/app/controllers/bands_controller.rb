@@ -1,8 +1,9 @@
 class BandsController < ApplicationController
   before_action :require_current_user!
-  
+
   def new
     @band = Band.new
+    fail
     render :new
   end
 
