@@ -1,5 +1,6 @@
 require_relative '02_searchable'
 require 'active_support/inflector'
+require 'byebug'
 
 # Phase IIIa
 class AssocOptions
@@ -25,7 +26,7 @@ class BelongsToOptions < AssocOptions
     options[:primary_key] ||= :id
 
     options.each do |key, value|
-      # instance_variable_set("@#{key}", value)
+      # instance_variable_set("@#{key}", value) # what I came up with
       self.send("#{key}=", value) # aA solution
     end
   end
@@ -33,12 +34,13 @@ end
 
 class HasManyOptions < AssocOptions
   def initialize(name, self_class_name, options = {})
-    options[:foreign_key] ||= :"#{self_class_name.downcase}_id"
+    options[:foreign_key] ||= :"#{self_class_name.underscore  }_id"
     options[:class_name] ||= name.to_s.singularize.camelize
     options[:primary_key] ||= :id
 
     options.each do |key, value|
-      instance_variable_set("@#{key}", value)
+      # instance_variable_set("@#{key}", value) # what I came up with
+      self.send("#{key}=", value) # I'm guessing this is aA's solution?
     end
 
     options
@@ -52,11 +54,11 @@ module Associatable
 
     define_method(name) do # makes an instance method !!!
       options = self.class.assoc_options[name]
-
       key_val = self.send(options.foreign_key)
+
       options
         .model_class
-        .where(options.primary_key = key_val)
+        .where(options.primary_key => key_val)
         .first
     end
   end
