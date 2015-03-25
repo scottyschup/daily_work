@@ -5,6 +5,10 @@ var Piece = require("./piece");
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
+  var grid = new Array(8);
+  for (var i = 0; i < 8; i++) {
+    grid[i] = new Array(8);
+  } 
 }
 
 /**
