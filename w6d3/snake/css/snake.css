@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+}
+
+.canvas {
+  width: 400px;
+  position: relative;
+  margin: auto;
+}
+
+.square {
+  width: 10px;
+  height: 10px;
+  /*outline: 1px solid #ccc;*/
+  position: relative;
+  float: left;
+  background: black;
+}
+
+.snake {
+  background: green;
+}
+
+.group:after {
+  content: '';
+  clear: both;
+  display: block;
+}

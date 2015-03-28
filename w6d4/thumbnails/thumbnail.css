@@ -1,0 +1,55 @@
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.thumbnails {
+  width: 400px;
+  margin: auto;
+}
+
+
+.active {
+  display: block;
+  width: 100%;
+}
+
+.gutter {
+  position: relative;
+}
+
+.gutter-images {
+  padding: 0;
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+
+.nav {
+  display: block;
+  width: 5%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  text-decoration: none;
+}
+
+.right {
+  left: 95%;
+}
+
+.gutter-images img.visible {
+  display: block;
+  float: left;
+  position: relative;
+}
+
+.gutter-images img {
+  width: 20%;
+  margin: 0px;
+  position: relative;
+  display: none;
+}

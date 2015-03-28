@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SNAKES!!!!!</title>
+    <link rel="stylesheet" type="text/css" href="../css/snake.css">
+  </head>
+  <body>
+    <script src="../../ttt/skeleton/js/jquery-2.1.1.js"></script>
+    <script src="../js/underscore.js"></script>
+    <script src="../js/snake.js"></script>
+    <script src="../js/snake-view.js"></script>
+
+    <h1>SNAKE!</h1>
+    <div class="canvas group"></div>
+
+    <script>
+      $(function () {
+        var view = new SnakeGame.View($('.canvas'));
+      });
+    </script>
+  </body>
+</html>

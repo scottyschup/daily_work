@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cool Website!</title>
+    <script src="./jquery-1.11.2.js"></script>
+    <script src="./thumbnail.js"></script>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link href="./thumbnail.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="thumbnails clearfix">
+      <div class="active">
+
+      </div>
+      <div class="gutter">
+        <a href="javascript:void(0)" class="nav left">&lt;</a>
+        <div class="gutter-images clearfix">
+           <img src="images/001.png"
+          ><img src="images/002.png"
+          ><img src="images/003.png"
+          ><img src="images/004.png"
+          ><img src="images/005.png"
+          ><img src="images/006.png"
+          ><img src="images/007.png"
+          ><img src="images/008.png"
+          ><img src="images/009.png"
+          ><img src="images/012.png"
+          ><img src="images/025.png"
+          ><img src="images/051.png"
+          ><img src="images/054.png"
+          ><img src="images/079.png"
+          ><img src="images/094.png"
+          ><img src="images/108.png"
+          ><img src="images/109.png"
+          ><img src="images/124.png"
+          ><img src="images/143.png"
+          >
+        </div>
+        <a href="javascript:void(0)" class="nav right">&gt;</a>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        $('.thumbnails').thumbnail();
+      });
+    </script>
+  </body>
+</html>

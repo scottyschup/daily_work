@@ -1,0 +1,56 @@
+body {
+  text-align: center;
+}
+
+
+.canvas {
+  margin: auto;
+  width: 400px;
+  min-height: 100px;
+}
+
+.group:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.tower {
+  position: relative;
+  width: 120px;
+  height: 200px;
+  float: left;
+  margin: auto;
+}
+
+.disc {
+  position: absolute;
+  bottom: 0px;
+  border: 2px solid seagreen;
+  background: lightblue;
+  border-radius: 15px;
+  margin: auto;
+  height: 25px;
+}
+
+.tower :nth-child(2) {
+  bottom: 30px;
+  left: 12px;
+}
+
+.tower :nth-child(3) {
+  bottom: 60px;
+  left: 25px;
+}
+
+.disc1 {
+  width: 50px;
+}
+
+.disc2 {
+  width: 75px;
+}
+
+.disc3 {
+  width: 100px;
+}

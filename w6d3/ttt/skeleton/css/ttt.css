@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+}
+
+h1 {
+  margin: 30px;
+}
+.square {
+  outline: 10px solid #ccc;
+  float: left;
+  background: mistyrose;
+  width: 150px;
+  height: 150px;
+  font-size: 100px;
+}
+
+.square:hover {
+  background: aquamarine;
+}
+
+.canvas {
+  width: 462px;
+  margin:auto;
+}
+
+.x {
+  background: navajowhite;
+}
+
+.o {
+  background: seagreen;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display:block;
+}

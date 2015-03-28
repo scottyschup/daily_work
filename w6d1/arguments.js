@@ -17,6 +17,7 @@ Function.prototype.myBind = function(context) {
 
 var curriedSum = function(numArgs) {
   var numbers = [];
+  
   return _curriedSum = function(num) {
     numbers.push(num);
     if (numbers.length === numArgs) {
