@@ -1,0 +1,19 @@
+<% if (errors) { %>
+  <div class="errors">
+    <ul>
+      <% _.each(errors, function(error) { %>
+        <li><%= error %></li>
+      <% }); %>
+    </ul>
+  </div>
+<%  } %>
+
+<form class="posts-form">
+  <label>Title
+    <input type="text" name="posts[title]" value="<%= post.escape('title') %>">
+  </label>
+  <label>Body
+    <textarea name="posts[body]"><%= post.escape('body') %></textarea>
+  </label>
+  <button type="submit">Submit</button>
+</form>

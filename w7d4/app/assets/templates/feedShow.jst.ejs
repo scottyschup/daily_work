@@ -1,0 +1,9 @@
+<h2><%= title %></h2>
+
+<button class="refresh">Refresh</button>
+
+<ul>
+<% entries.each(function (entry) { %>
+  <li><a href="<%= entry.escape('link')%>" target="_blank"><%= entry.escape('title') %></a></li>
+<% }) %>
+</ul>
