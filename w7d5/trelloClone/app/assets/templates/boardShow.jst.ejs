@@ -2,7 +2,7 @@
 <a href="#">Boards Index</a>
 
 <div class="lists">
-  <% lists.each(function () { %>
+  <% lists.each(function (list) { %>
     <h3><%= list.escape('title') %></h3>
 
     <ul class="cards">
