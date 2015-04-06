@@ -1,5 +1,5 @@
 TrelloClone.Views.Boards = Backbone.View.extend({
-  template: JST['boards'],
+  template: JST['boards/index'],
   className: "boards-container",
 
   initialize: function () {
@@ -10,6 +10,6 @@ TrelloClone.Views.Boards = Backbone.View.extend({
     var content = this.template({ boards: this.collection });
     this.$el.html(content);
     return this;
-  }
+  },
 
 });
