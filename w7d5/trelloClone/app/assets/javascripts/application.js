@@ -16,6 +16,7 @@
 //= require jquery.ui.sortable
 //= require underscore
 //= require backbone
+//= require_tree ./utils
 //= require bootstrap
 //= require trello_clone
 //= require_tree ./routers

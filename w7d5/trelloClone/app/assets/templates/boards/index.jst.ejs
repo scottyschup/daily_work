@@ -1,6 +1,6 @@
-<h1>My Boards</h1>
+<p>My Boards</p>
 <% boards.each(function (board) { %>
-  <div class="board-item">
+  <div class="board">
     <a href="#boards/<%= board.get('id') %>"><%= board.escape('title') %></a>
   </div>
 <% }) %>

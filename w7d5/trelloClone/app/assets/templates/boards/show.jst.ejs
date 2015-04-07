@@ -1,10 +1,2 @@
-<h2><%= board.escape('title') %></h2>
-
-<div class="lists">
-  <% lists.each(function (list) { %>
-    <h3><%= list.escape('title') %></h3>
-
-    <ul class="cards">
-    </ul>
-  <% }) %>
-</div>
+<p><%= board.escape('title') %></p><button class="add newList">+</button>
+<div class="lists"></div>
